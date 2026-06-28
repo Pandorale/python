@@ -1,0 +1,82 @@
+
+ #   Problem
+ #   A string is simply an ordered collection of symbols selected from some alphabet and formed into a word; the length of a string is the number of symbols that it contains.
+
+ #   An example of a length 21 DNA string (whose alphabet contains the symbols 'A', 'C', 'G', and 'T') is "ATGCTTCAGAAAGGTCTTACG."
+
+ #   Given: A DNA string s of length at most 1000 nt. 
+ #   Return: Four integers (separated by spaces) counting the respective number of times that the symbols 'A', 'C', 'G', and 'T' occur in s.
+
+
+# 1
+with open("rosalind_dna.txt", 'r') as fichier:
+    s = fichier.read().strip()
+print(s.count("A"), s.count("C"), s.count("G"), s.count("T"))
+
+
+
+
+# 2
+import sys
+
+file = open(sys.argv[1])
+dna_str = file.read() #You can also put the text from the file into the code as a variable
+
+A = dna_str.count("A")
+C = dna_str.count("C")
+G = dna_str.count("G")
+T = dna_str.count("T")
+
+print(A, C, G, T)
+
+
+# 3
+
+with open("rosalind_dna.txt") as fichier:
+    s = fichier.read().strip()
+
+A = C = G = T = 0
+
+for lettre in s:
+    if lettre == "A":
+        A += 1
+    elif lettre == "C":
+        C += 1
+    elif lettre == "G":
+        G += 1
+    else:
+        T += 1
+
+print(A, C, G, T)
+
+
+# 4
+
+with open("rosalind_dna.txt") as fichier:
+    s = fichier.read().strip()
+
+compteur = {
+    "A": 0,
+    "C": 0,
+    "G": 0,
+    "T": 0
+}
+
+for lettre in s:
+    compteur[lettre] += 1
+
+print(compteur["A"], compteur["C"], compteur["G"], compteur["T"])
+
+
+
+# 5
+
+
+from collections import Counter
+
+with open("rosalind_dna.txt") as fichier:
+    s = fichier.read().strip()
+
+compteur = Counter(s)
+
+print(compteur["A"], compteur["C"], compteur["G"], compteur["T"])
