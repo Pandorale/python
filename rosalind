@@ -9,6 +9,7 @@
 
 
 # 1
+
 with open("rosalind_dna.txt", 'r') as fichier:
     s = fichier.read().strip()
 print(s.count("A"), s.count("C"), s.count("G"), s.count("T"))
@@ -17,6 +18,7 @@ print(s.count("A"), s.count("C"), s.count("G"), s.count("T"))
 
 
 # 2
+
 import sys
 
 file = open(sys.argv[1])
@@ -70,7 +72,6 @@ print(compteur["A"], compteur["C"], compteur["G"], compteur["T"])
 
 
 # 5
-
 
 from collections import Counter
 
