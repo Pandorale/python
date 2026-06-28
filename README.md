@@ -1,1 +1,1 @@
-# python
+# python exercices with solutions
